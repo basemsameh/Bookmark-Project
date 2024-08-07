@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.2s linear 0s;
+}
+
+.bg-gr {
+  background-color: lightgrey;
+}
+
+h3 {
+  color: darkgray;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Bookmark</title>
+</head>
+
+<body>
+  <section class="container">
+    <div class="py-5">
+      <h3>Bookmarker</h3>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12 bg-gr py-5">
+        <div class="text-center">
+          <h2 class="pb-5">Bookmark Your Favourite Site</h2>
+          <!-- Site Name -->
+          <label for="siteName">Site Name</label>
+          <input type="text" placeholder="Bookmark Name" required class="form-control my-2 w-75 m-auto" id="siteName">
+          <!-- Site URL -->
+          <label for="siteURL">Site URL</label>
+          <input type="text" placeholder="Website URL" required class="form-control my-2 w-75 m-auto" id="siteURL">
+          <button type="submit" class="btn btn-primary my-2">Submit</button>
+        </div>
+      </div>
+    </div>
+    <!-- Table -->
+    <table class="table">
+      <tbody id="tableData" class="text-center">
+
+      </tbody>
+    </table>
+    <hr>
+  </section>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
