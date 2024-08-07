@@ -35,9 +35,10 @@ function deleteData(index) {
 }
 
 function displayData() {
+  bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
   let container = ``;
   for (let i = 0; i < bookmarks.length; i++) {
-    container = `
+    container += `
       <tr>
         <td>${bookmarks[i].name}</td>
         <td><a href="${bookmarks[i].url}" class="btn btn-outline-primary">Visit</a></td>
