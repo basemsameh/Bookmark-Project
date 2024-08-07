@@ -49,8 +49,4 @@ function displayData() {
   tableData.innerHTML = container;
 }
 
-function visit(index) {
-  window.open(bookmarks[index].url);
-}
-
 submitBtn.onclick = () => { add() };
