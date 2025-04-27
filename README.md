@@ -49,5 +49,5 @@ A simple web application for bookmarking your favorite websites. Users can add, 
 
 You can access the deployed version of the app here:
 
-[Live Demo]([https://your-deployment-link.com](https://basemsameh.github.io/Bookmark-Project/))
+[Live Demo](https://basemsameh.github.io/Bookmark-Project/)
 
