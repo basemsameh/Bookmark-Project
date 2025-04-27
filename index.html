@@ -1,46 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <title>Bookmark</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/all.min.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Bookmark</title>
-</head>
-
-<body>
-  <section class="container">
-    <div class="py-5">
-      <h3>Bookmarker</h3>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-sm-12 bg-gr py-5">
-        <div class="text-center">
-          <h2 class="pb-5">Bookmark Your Favourite Site</h2>
-          <!-- Site Name -->
-          <label for="siteName">Site Name</label>
-          <input type="text" placeholder="Bookmark Name" required class="form-control my-2 w-75 m-auto" id="siteName">
-          <!-- Site URL -->
-          <label for="siteURL">Site URL</label>
-          <input type="text" placeholder="Website URL" required class="form-control my-2 w-75 m-auto" id="siteURL">
-          <button type="submit" class="btn btn-primary my-2">Submit</button>
-        </div>
+  <body>
+    <section class="container">
+      <div class="py-5 d-flex justify-content-between align-items-center">
+        <h3>Bookmarker</h3>
+        <button id="themeBtn" class="btn btn-dark fs-4">
+          <i class="fa-solid fa-moon"></i>
+        </button>
       </div>
-    </div>
-    <!-- Table -->
-    <table class="table">
-      <tbody id="tableData" class="text-center">
+      <hr />
+      <div class="d-flex flex-wrap justify-content-between">
+        <form
+          method="post"
+          class="bg-body-secondary mb-4 mb-lg-0 col-12 col-lg-4 bg-gr py-5 px-3 rounded-3"
+        >
+          <h1 class="text-center pb-5 fst-italic">
+            Bookmark Your Favourite Site
+          </h1>
+          <!-- Site Name -->
+          <div>
+            <label for="siteName" class="form-label">Bookmark Name</label>
+            <input
+              type="text"
+              placeholder="Bookmark Name"
+              class="form-control"
+              id="siteName"
+              required
+            />
+          </div>
+          <!-- Site URL -->
+          <div class="mt-3 mb-4">
+            <label for="siteURL" class="form-label">Website URL</label>
+            <input
+              type="text"
+              placeholder="Website URL"
+              class="form-control"
+              id="siteURL"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            id="addBookmarkBtn"
+            class="btn btn-dark px-4 py-2 mx-auto d-block"
+          >
+            Add Bookmark
+          </button>
+        </form>
+        <!-- Table -->
+        <section class="col-12 col-lg-8 ps-lg-3">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th class="bg-body-secondary p-3 fs-5">ID</th>
+                <th class="bg-body-secondary p-3 fs-5">Site Name</th>
+                <th class="bg-body-secondary p-3 fs-5">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tableData"></tbody>
+          </table>
+        </section>
+      </div>
+      <hr />
+    </section>
 
-      </tbody>
-    </table>
-    <hr>
-  </section>
-
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

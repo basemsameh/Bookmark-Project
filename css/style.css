@@ -6,15 +6,44 @@
   transition: all 0.2s linear 0s;
 }
 
-.bg-gr {
-  background-color: lightgrey;
+body.black {
+  background-color: #333;
+
+  hr {
+    background-color: #fff;
+    color: #fff;
+  }
 }
 
 h3 {
   color: darkgray;
 }
 
-label {
+form label {
   font-size: 18px;
   font-weight: 600;
+}
+
+table {
+  th:first-of-type {
+    border-radius: 10px 0 0 0;
+    -webkit-border-radius: 10px 0 0 0;
+    -moz-border-radius: 10px 0 0 0;
+    -ms-border-radius: 10px 0 0 0;
+    -o-border-radius: 10px 0 0 0;
+  }
+
+  th:last-of-type {
+    border-radius: 0 10px 0 0;
+    -webkit-border-radius: 0 10px 0 0;
+    -moz-border-radius: 0 10px 0 0;
+    -ms-border-radius: 0 10px 0 0;
+    -o-border-radius: 0 10px 0 0;
+  }
+
+  tbody td {
+    padding: 10px 20px !important;
+    font-weight: 500;
+    font-size: 17px;
+  }
 }
