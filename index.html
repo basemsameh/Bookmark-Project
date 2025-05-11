@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
     <title>Bookmark</title>
   </head>
 
@@ -59,7 +59,7 @@
         </form>
         <!-- Table -->
         <section class="col-12 col-lg-8 ps-lg-3">
-          <table class="table ">
+          <table class="table">
             <thead>
               <tr>
                 <th class="bg-body-secondary p-3 fs-5">ID</th>
@@ -67,7 +67,11 @@
                 <th class="bg-body-secondary p-3 fs-5">Actions</th>
               </tr>
             </thead>
-            <tbody id="tableData"></tbody>
+            <tbody id="tableData">
+              <td colspan="3" class="text-center py-5 fs-4 fw-bold">
+                No Bookmarks To Show
+              </td>
+            </tbody>
           </table>
         </section>
       </div>
