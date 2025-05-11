@@ -20,7 +20,7 @@ if (localStorage.getItem("bookmarks") !== null) {
   displayData();
 } else {
   bookmarks = [];
-  tableData = `<td colspan="2" class="text-center">No Bookmarks To Show</td>`
+  tableData.innerHTML = `<td colspan="3" class="text-center py-5 fs-4 fw-bold">No Bookmarks To Show</td>`
 }
 
 function add() {
@@ -48,6 +48,7 @@ function deleteData(index) {
 }
 
 function displayData() {
+  tableData.innerHTML = '';
   bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
   let container = ``;
   if (bookmarks.length > 0) {
