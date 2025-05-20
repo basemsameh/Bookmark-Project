@@ -19,9 +19,14 @@ h3 {
   color: darkgray;
 }
 
-form label {
-  font-size: 18px;
-  font-weight: 600;
+form {
+  & {
+    height: fit-content;
+  }
+  label {
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
 table {
