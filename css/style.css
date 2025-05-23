@@ -13,6 +13,11 @@ body.black {
     background-color: #fff;
     color: #fff;
   }
+
+  table td {
+    background-color: #333;
+    color: #fff;
+  }
 }
 
 h3 {
