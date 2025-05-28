@@ -32,6 +32,15 @@ body.black {
         background-color: #eee !important;
       }
     }
+
+    input {
+      background-color: #444 !important;
+      color: var(--white) !important;
+
+      &::placeholder {
+        color: #aaa !important;
+      }
+    }
   }
 
   table th {
