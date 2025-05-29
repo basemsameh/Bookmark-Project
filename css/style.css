@@ -120,7 +120,7 @@ form {
     }
 
     tbody td {
-      padding: 10px 20px !important;
+      padding: 10px 20px;
       font-weight: 500;
       font-size: 17px;
     }
@@ -135,7 +135,7 @@ form {
 }
 
 @media (width > 1300px) {
-  .container-fluid{
+  .container-fluid {
     max-width: 95% !important;
     margin: auto !important;
   }
