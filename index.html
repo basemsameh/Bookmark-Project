@@ -11,18 +11,39 @@
   </head>
 
   <body>
-    <section class="container">
-      <div class="py-5 d-flex justify-content-between align-items-center">
+    <section class="container-fluid">
+      <header
+        class="py-5 d-flex justify-content-between align-items-center mx-auto"
+      >
         <h3>Bookmarker</h3>
-        <button id="themeBtn" class="btn btn-dark fs-4">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-      </div>
+        <div>
+          <button
+            type="button"
+            id="themeBtn"
+            class="btn me-3"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Toggle Theme"
+          >
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button
+            type="button"
+            class="btn"
+            id="addBtn"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Add Bookmark"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </header>
       <hr />
-      <div class="d-flex flex-wrap justify-content-between">
+      <main class="d-flex flex-wrap justify-content-between position-relative">
         <form
           method="post"
-          class="bg-body-secondary mb-4 mb-lg-0 col-12 col-lg-4 bg-gr py-5 px-3 rounded-3"
+          class="bg-body-secondary hide mb-4 mb-lg-0 col-12 col-lg-4 bg-gr py-5 px-3 rounded-3"
         >
           <h1 class="text-center pb-5 fst-italic">
             Bookmark Your Favourite Site
@@ -58,7 +79,7 @@
           </button>
         </form>
         <!-- Table -->
-        <section class="col-12 col-lg-8 ps-lg-3">
+        <section id="table-container" class="col-12">
           <table class="table">
             <thead>
               <tr>
@@ -70,9 +91,32 @@
             <tbody id="tableData"></tbody>
           </table>
         </section>
-      </div>
+      </main>
       <hr />
     </section>
+
+    <!-- Success Toast -->
+    <div
+      class="toast-container position-fixed top-0 end-0 mt-2 me-md-2 text-white"
+    >
+      <div
+        class="toast align-items-center fs-6 fw-bold border-0"
+        id="successToast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex w-100 h-100 align-items-center">
+          <div class="toast-body"></div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>

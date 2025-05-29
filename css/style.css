@@ -3,7 +3,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  transition: all 0.2s linear 0s;
+  transition: all 0.3s linear 0s;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
 }
 
 :root {
@@ -18,6 +22,14 @@ body.black {
   hr {
     background-color: var(--white);
     color: var(--white);
+  }
+
+  header {
+    #themeBtn,
+    #addBtn {
+      background-color: var(--white);
+      color: var(--dark);
+    }
   }
 
   form {
@@ -55,40 +67,76 @@ body.black {
   }
 }
 
-h3 {
-  color: darkgray;
+header {
+  h3 {
+    color: darkgray;
+  }
+
+  #themeBtn,
+  #addBtn {
+    background-color: var(--dark);
+    color: var(--white);
+    font-size: 24px;
+  }
 }
 
 form {
-  & {
-    height: fit-content;
+  height: fit-content;
+  max-width: 600px;
+  margin: 0 auto;
+
+  &.hide {
+    position: absolute;
+    top: 0;
+    left: -1000px;
   }
+
   label {
     font-size: 18px;
     font-weight: 600;
   }
 }
 
-table {
-  th:first-of-type {
-    border-radius: 10px 0 0 0;
-    -webkit-border-radius: 10px 0 0 0;
-    -moz-border-radius: 10px 0 0 0;
-    -ms-border-radius: 10px 0 0 0;
-    -o-border-radius: 10px 0 0 0;
-  }
+#table-container {
+  overflow: auto;
 
-  th:last-of-type {
-    border-radius: 0 10px 0 0;
-    -webkit-border-radius: 0 10px 0 0;
-    -moz-border-radius: 0 10px 0 0;
-    -ms-border-radius: 0 10px 0 0;
-    -o-border-radius: 0 10px 0 0;
-  }
+  table {
+    min-width: 696px;
 
-  tbody td {
-    padding: 10px 20px !important;
-    font-weight: 500;
-    font-size: 17px;
+    th:first-of-type {
+      border-radius: 10px 0 0 0;
+      -webkit-border-radius: 10px 0 0 0;
+      -moz-border-radius: 10px 0 0 0;
+      -ms-border-radius: 10px 0 0 0;
+      -o-border-radius: 10px 0 0 0;
+    }
+
+    th:last-of-type {
+      border-radius: 0 10px 0 0;
+      -webkit-border-radius: 0 10px 0 0;
+      -moz-border-radius: 0 10px 0 0;
+      -ms-border-radius: 0 10px 0 0;
+      -o-border-radius: 0 10px 0 0;
+    }
+
+    tbody td {
+      padding: 10px 20px !important;
+      font-weight: 500;
+      font-size: 17px;
+    }
+  }
+}
+
+.toast-container {
+  .toast {
+    padding: 5px 15px !important;
+    background-image: linear-gradient(135deg, #27ae60, #2ecc71);
+  }
+}
+
+@media (width > 1300px) {
+  .container-fluid{
+    max-width: 95% !important;
+    margin: auto !important;
   }
 }

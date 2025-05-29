@@ -1,8 +1,11 @@
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 let siteName = document.querySelector("#siteName");
 let siteURL = document.querySelector("#siteURL");
 let submitBtn = document.querySelector("#addBookmarkBtn");
 let tableData = document.querySelector("#tableData");
 let themeBtn = document.querySelector('#themeBtn i');
+let addBookmarkBtn = document.querySelector("#addBtn");
 let bookmarks;
 let currentTheme;
 
@@ -14,6 +17,10 @@ if (localStorage.getItem('theme') !== null) {
   localStorage.setItem('theme', currentTheme);
   checkTheme();
 }
+
+currentTheme === 'light'
+  ? themeBtn.className = 'fa-solid fa-sun'
+  : themeBtn.className = 'fa-solid fa-moon'
 
 if (localStorage.getItem("bookmarks") !== null) {
   bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
@@ -33,6 +40,7 @@ function add() {
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     clearInpts();
     displayData();
+    displayToast('add');
   }
 }
 
@@ -45,13 +53,16 @@ function deleteData(index) {
   bookmarks.splice(index, 1);
   localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   displayData();
+  displayToast('delete');
 }
 
 function displayData() {
   tableData.innerHTML = '';
   bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
   let container = ``;
-  if (bookmarks.length > 0) {
+  if (bookmarks.length === 0) {
+    container = `<td colspan="3" class="text-center py-5 fs-4 fw-bold">No Bookmarks To Show</td>`;
+  } else {
     for (let i = 0; i < bookmarks.length; i++) {
       container += `
         <tr>
@@ -64,8 +75,6 @@ function displayData() {
         </tr>
       `
     }
-  } else {
-    container = `<td colspan="3" class="text-center py-5 fs-4 fw-bold">No Bookmarks To Show</td>`;
   }
   tableData.innerHTML = container;
 }
@@ -90,5 +99,31 @@ function changeTheme() {
   checkTheme();
 }
 
+function displayBookmarkForm() {
+  let form = document.querySelector("form");
+  let tableContainer = document.querySelector('#table-container');
+  if (form.classList.contains("hide")) {
+    form.classList.remove("hide");
+    addBookmarkBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+    tableContainer.className = 'col-12 col-lg-8 ps-lg-3';
+  } else {
+    form.classList.add("hide");
+    addBookmarkBtn.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+    tableContainer.className = 'col-12';
+  }
+}
+
+function displayToast(text) {
+  const toastLive = document.getElementById('successToast');
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLive);
+  if (text === 'add') {
+    toastLive.querySelector('.toast-body').innerHTML = `Bookmark Added Successfully`;
+  } else if (text === 'delete') {
+    toastLive.querySelector('.toast-body').innerHTML = `Bookmark Deleted Successfully`;
+  }
+  toastBootstrap.show();
+}
+
 submitBtn.onclick = () => { add() };
 themeBtn.onclick = () => { changeTheme() }
+addBookmarkBtn.onclick = () => { displayBookmarkForm() };
