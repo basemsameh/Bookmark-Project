@@ -21,7 +21,7 @@ A simple web application for bookmarking your favorite websites. Users can add, 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/bookmarker.git
+   git clone https://github.com/basemsameh/Bookmark-Project.git
    ```
 
 2. Navigate to the project folder:
