@@ -97,26 +97,27 @@ function displayData() {
     else {
         for (let i = 0; i < bookmarks.length; i++) {
             container += `
-        <tr>
-        <td>${bookmarks[i].no ?? i + 1}</td>
-        <td>${bookmarks[i].name}</td>
-          <td><a href="${bookmarks[i].url}" class="btn btn-outline-primary">Visit</a></td>
-          <td>
-            <button
-              onclick="assignInputValues(${i})"
-              class="btn btn-outline-secondary"
-              >Update
-            </button>
-          </td>
-          <td>
-            <button
-              onclick="deleteData(${i})"
-              class="btn btn-outline-danger"
-              >Delete
-            </button>
-          </td>
-        </tr>
-      `;
+            <tr>
+                <td>${bookmarks[i].no ?? i + 1}</td>
+                <td>${bookmarks[i].name}</td>
+                <td>
+                    <a
+                        href="${bookmarks[i].url}" 
+                        class="btn btn-outline-primary">Visit
+                    </a>
+                    <button
+                        onclick="assignInputValues(${i})"
+                        class="btn btn-outline-secondary"
+                        >Update
+                    </button>
+                    <button
+                        onclick="deleteData(${i})"
+                        class="btn btn-outline-danger"
+                        >Delete
+                    </button>
+                </td>
+            </tr>
+            `;
         }
     }
     tableData.innerHTML = container;
