@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
-    <title>Bookmark</title>
+    <title>Bookmarker</title>
   </head>
 
   <body>
@@ -15,7 +15,7 @@
       <header
         class="py-5 d-flex justify-content-between align-items-center mx-auto"
       >
-        <h3>Bookmarker</h3>
+        <h3>&lt;Bookmarker&gt;</h3>
         <div>
           <button
             type="button"
@@ -34,6 +34,7 @@
             data-bs-toggle="tooltip"
             data-bs-placement="top"
             data-bs-title="Add Bookmark"
+            onclick="displayBookmarkForm('create')"
           >
             <i class="fa-solid fa-plus"></i>
           </button>
@@ -75,7 +76,7 @@
             id="addBookmarkBtn"
             class="btn btn-dark px-4 py-2 mx-auto d-block"
           >
-            Add Bookmark
+            Submit
           </button>
         </form>
         <!-- Table -->
