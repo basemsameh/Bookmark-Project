@@ -3,42 +3,51 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
 let siteName = document.querySelector("#siteName");
 let siteURL = document.querySelector("#siteURL");
+
 const submitBtn = document.querySelector("button");
 const tableData = document.querySelector("#tableData");
 const themeBtn = document.querySelector("#themeBtn i");
 const addBookmarkBtn = document.querySelector("#addBtn");
+
 let editBookmarkNo = 0;
 let mode = "create";
 let currentTheme = "dark";
 let bookmarks = [];
-if (localStorage.getItem("theme") !== null) {
-  currentTheme = localStorage.getItem("theme") ?? "dark";
-  checkTheme();
+
+startupApp();
+
+function startupApp() {
+  if (localStorage.getItem("theme") !== null) {
+    currentTheme = localStorage.getItem("theme") ?? "dark";
+    checkTheme();
+  }
+  else {
+    currentTheme = "light";
+    localStorage.setItem("theme", currentTheme);
+    checkTheme();
+  }
+  if (currentTheme === "light") {
+    if (themeBtn)
+      themeBtn.className = "fa-solid fa-sun";
+  }
+  else {
+    if (themeBtn)
+      themeBtn.className = "fa-solid fa-moon";
+  }
+  if (localStorage.getItem("bookmarks") !== null) {
+    bookmarks = JSON.parse(localStorage?.getItem("bookmarks") ?? "");
+  }
+  else {
+    bookmarks = [];
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+  }
+  displayData();
 }
-else {
-  currentTheme = "light";
-  localStorage.setItem("theme", currentTheme);
-  checkTheme();
-}
-if (currentTheme === "light") {
-  if (themeBtn)
-    themeBtn.className = "fa-solid fa-sun";
-}
-else {
-  if (themeBtn)
-    themeBtn.className = "fa-solid fa-moon";
-}
-if (localStorage.getItem("bookmarks") !== null) {
-  bookmarks = JSON.parse(localStorage?.getItem("bookmarks") ?? "");
-}
-else {
-  bookmarks = [];
-  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-}
-displayData();
+
 function add() {
-  if (!siteName?.value || !siteURL?.value)
-    return;
+  console.log(siteName, siteURL);
+  if (!siteName?.value || !siteURL?.value) return;
+
   const maxNo = bookmarks.length + 1;
   let bookmarker = {
     name: siteName?.value,
@@ -178,7 +187,9 @@ function displayToast(text) {
   }
   toastBootstrap.show();
 }
+
 themeBtn.onclick = () => changeTheme();
+
 submitBtn.onclick = () => {
   console.log(mode);
   if (mode === "create")
