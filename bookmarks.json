@@ -27,10 +27,22 @@
     "name": "AWS Server",
     "url": "https://eu-west-1.console.aws.amazon.com/ec2/home?region=eu-west-1#Instances:"
   },
-  { "name": "EDU MOM", "url": "https://teacher.emis.gov.eg/dashboard" },
-  { "name": "NotebookLM", "url": "https://notebooklm.google/" },
-  { "name": "NgRx", "url": "https://ngrx.io/docs" },
-  { "name": "My Meeting Link", "url": "https://meet.google.com/qxa-qcwc-maf" },
+  {
+    "name": "EDU MOM",
+    "url": "https://teacher.emis.gov.eg/dashboard"
+  },
+  {
+    "name": "NotebookLM",
+    "url": "https://notebooklm.google/"
+  },
+  {
+    "name": "NgRx",
+    "url": "https://ngrx.io/docs"
+  },
+  {
+    "name": "My Meeting Link",
+    "url": "https://meet.google.com/qxa-qcwc-maf"
+  },
   {
     "name": "Studying Bash",
     "url": "https://www.gnu.org/software/bash/manual/bash.html#Double-Quotes"
@@ -43,7 +55,10 @@
     "name": "Grokking Algorithm Book",
     "url": "https://printrado.com/product/grokking-algorithms/"
   },
-  { "name": "C# Enum", "url": "https://www.w3schools.com/cs/cs_enums.php" },
+  {
+    "name": "C# Enum",
+    "url": "https://www.w3schools.com/cs/cs_enums.php"
+  },
   {
     "name": "Stcok Transaction Orientation",
     "url": "https://drive.google.com/drive/folders/1JfqhhwSUNy8zghC9Gx856RdAWbDRTTUw"
@@ -80,7 +95,10 @@
     "name": "Stock Transaction US NootbookLM",
     "url": "https://notebooklm.google.com/notebook/3e7ead01-7a48-4c64-8c1c-5b175ee6b7fb?original_referer=https:%2F%2Fnotebooklm.google%23"
   },
-  { "name": "Route Account", "url": "https://routelms.com/" },
+  {
+    "name": "Route Account",
+    "url": "https://routelms.com/"
+  },
   {
     "name": "Route ASP Drive Videos",
     "url": "https://drive.google.com/drive/folders/1-UsF5qOdKk1LNSNhYsQTpxaVRtmPa-VC"
@@ -104,5 +122,9 @@
   {
     "name": "CompTIA Network+ NotebookLM",
     "url": "https://notebook.google.com/notebook/4c734532-5fb9-4da4-8bdd-b613a9f825b1"
+  },
+  {
+    "name": "Ethical Hacking Tools",
+    "url": "https://github.com/hhhrrrttt222111/Ethical-Hacking-Tools/tree/master"
   }
 ]
